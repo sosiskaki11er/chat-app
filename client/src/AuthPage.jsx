@@ -6,14 +6,14 @@ const AuthPage = (props) => {
       axios.post('https://chat-app-jrj2.onrender.com/authenticate',{username: value}).then(r => props.onAuth({...r.data, secret: value})).catch( e => console.log('error',e))
       props.onAuth({ username: value, secret: value });
     };
-  
+
     return (
       <div className="background">
         <form onSubmit={onSubmit} className="form-card">
           <div className="form-title">Welcome 👋</div>
-  
+
           <div className="form-subtitle">Set a username to get started</div>
-  
+
           <div className="auth">
             <div className="auth-label">Username</div>
             <input className="auth-input" name="username" />
@@ -25,5 +25,5 @@ const AuthPage = (props) => {
       </div>
     );
   };
-  
+
   export default AuthPage;
